@@ -6,6 +6,7 @@ public class Jogador : MonoBehaviour
 {
     public Rigidbody rb;
     public int forcaX, forcaZ;
+    public GerenciaJogo gerenciaJogo;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +33,10 @@ public class Jogador : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Jogador Colidiu com " + collision.collider.name);
+        //if (collision.collider.name.Contains("Asteroide")) {
+        if (collision.collider.CompareTag("Obstaculo"))
+        {
+            gerenciaJogo.GameOver();
+        }
     }
 }

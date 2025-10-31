@@ -7,6 +7,7 @@ TagManager:
   - Asteroide1
   - Asteroide2
   - Asteroide3
+  - Obstaculo
   layers:
   - Default
   - TransparentFX
