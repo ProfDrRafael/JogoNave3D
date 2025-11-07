@@ -7,6 +7,7 @@ public class Jogador : MonoBehaviour
     public Rigidbody rb;
     public int forcaX, forcaZ;
     public GerenciaJogo gerenciaJogo;
+    public AudioSource audioExplosao;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class Jogador : MonoBehaviour
         //if (collision.collider.name.Contains("Asteroide")) {
         if (collision.collider.CompareTag("Obstaculo"))
         {
+            audioExplosao.Play();
             gerenciaJogo.GameOver();
         }
     }
