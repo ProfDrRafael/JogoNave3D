@@ -4,9 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Asteroide1
-  - Asteroide2
-  - Asteroide3
   - Obstaculo
   layers:
   - Default
