@@ -16,6 +16,9 @@ public class SeguirJogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = jogador.transform.position + distanciaJogador;
+        if (jogador != null)
+        {
+            this.transform.position = jogador.transform.position + distanciaJogador;
+        }
     }
 }

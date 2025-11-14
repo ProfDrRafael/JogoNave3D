@@ -8,6 +8,9 @@ public class Jogador : MonoBehaviour
     public int forcaX, forcaZ;
     public GerenciaJogo gerenciaJogo;
     public AudioSource audioExplosao;
+    //public GameObject explosao;
+    public GameObject fxexplosao;
+    public GameObject jogador;
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +40,17 @@ public class Jogador : MonoBehaviour
         //if (collision.collider.name.Contains("Asteroide")) {
         if (collision.collider.CompareTag("Obstaculo"))
         {
+            GameObject.Instantiate(fxexplosao, this.transform.position, this.transform.rotation);
+            //explosao.SetActive(true);
             audioExplosao.Play();
             gerenciaJogo.GameOver();
+            Destroy(jogador);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        gerenciaJogo.GameCompleted();
+    }
+
 }
